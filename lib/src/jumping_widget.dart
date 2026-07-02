@@ -186,15 +186,18 @@ class _AwesomeJumpingWidgetState extends State<AwesomeJumpingWidget>
   void _setupAnimations() {
     _iconJumpAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween(begin: 0.0, end: -widget.jumpHeight).chain(CurveTween(curve: widget.jumpCurve)),
+        tween: Tween(
+          begin: 0.0,
+          end: -widget.jumpHeight,
+        ).chain(CurveTween(curve: widget.jumpCurve)),
         weight: 20,
       ),
+      TweenSequenceItem(tween: ConstantTween(-widget.jumpHeight), weight: 40),
       TweenSequenceItem(
-        tween: ConstantTween(-widget.jumpHeight),
-        weight: 40,
-      ),
-      TweenSequenceItem(
-        tween: Tween(begin: -widget.jumpHeight, end: 0.0).chain(CurveTween(curve: widget.landCurve)),
+        tween: Tween(
+          begin: -widget.jumpHeight,
+          end: 0.0,
+        ).chain(CurveTween(curve: widget.landCurve)),
         weight: 40,
       ),
     ]).animate(_controller);
@@ -204,10 +207,22 @@ class _AwesomeJumpingWidgetState extends State<AwesomeJumpingWidget>
         TweenSequenceItem(tween: ConstantTween(0.0), weight: 20),
         TweenSequenceItem(
           tween: TweenSequence([
-            TweenSequenceItem(tween: Tween(begin: 0.0, end: widget.shakeAngle), weight: 1),
-            TweenSequenceItem(tween: Tween(begin: widget.shakeAngle, end: -widget.shakeAngle), weight: 2),
-            TweenSequenceItem(tween: Tween(begin: -widget.shakeAngle, end: widget.shakeAngle), weight: 2),
-            TweenSequenceItem(tween: Tween(begin: widget.shakeAngle, end: 0.0), weight: 1),
+            TweenSequenceItem(
+              tween: Tween(begin: 0.0, end: widget.shakeAngle),
+              weight: 1,
+            ),
+            TweenSequenceItem(
+              tween: Tween(begin: widget.shakeAngle, end: -widget.shakeAngle),
+              weight: 2,
+            ),
+            TweenSequenceItem(
+              tween: Tween(begin: -widget.shakeAngle, end: widget.shakeAngle),
+              weight: 2,
+            ),
+            TweenSequenceItem(
+              tween: Tween(begin: widget.shakeAngle, end: 0.0),
+              weight: 1,
+            ),
           ]),
           weight: 40,
         ),
@@ -219,22 +234,28 @@ class _AwesomeJumpingWidgetState extends State<AwesomeJumpingWidget>
 
     _textScaleAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween(begin: 1.0, end: widget.labelMaxScale).chain(CurveTween(curve: widget.jumpCurve)),
+        tween: Tween(
+          begin: 1.0,
+          end: widget.labelMaxScale,
+        ).chain(CurveTween(curve: widget.jumpCurve)),
         weight: 20,
       ),
+      TweenSequenceItem(tween: ConstantTween(widget.labelMaxScale), weight: 40),
       TweenSequenceItem(
-        tween: ConstantTween(widget.labelMaxScale),
-        weight: 40,
-      ),
-      TweenSequenceItem(
-        tween: Tween(begin: widget.labelMaxScale, end: 1.0).chain(CurveTween(curve: widget.landCurve)),
+        tween: Tween(
+          begin: widget.labelMaxScale,
+          end: 1.0,
+        ).chain(CurveTween(curve: widget.landCurve)),
         weight: 40,
       ),
     ]).animate(_controller);
 
     _textTranslateAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween(begin: 0.0, end: widget.labelTranslateY).chain(CurveTween(curve: widget.jumpCurve)),
+        tween: Tween(
+          begin: 0.0,
+          end: widget.labelTranslateY,
+        ).chain(CurveTween(curve: widget.jumpCurve)),
         weight: 20,
       ),
       TweenSequenceItem(
@@ -242,12 +263,16 @@ class _AwesomeJumpingWidgetState extends State<AwesomeJumpingWidget>
         weight: 40,
       ),
       TweenSequenceItem(
-        tween: Tween(begin: widget.labelTranslateY, end: 0.0).chain(CurveTween(curve: widget.landCurve)),
+        tween: Tween(
+          begin: widget.labelTranslateY,
+          end: 0.0,
+        ).chain(CurveTween(curve: widget.landCurve)),
         weight: 40,
       ),
     ]).animate(_controller);
 
-    final effectiveBeginColor = widget.labelColorBegin ??
+    final effectiveBeginColor =
+        widget.labelColorBegin ??
         widget.labelStyle?.color ??
         Theme.of(context).disabledColor;
 
@@ -258,10 +283,7 @@ class _AwesomeJumpingWidgetState extends State<AwesomeJumpingWidget>
         tween: ColorTween(begin: effectiveBeginColor, end: effectiveEndColor),
         weight: 20,
       ),
-      TweenSequenceItem(
-        tween: ConstantTween(effectiveEndColor),
-        weight: 40,
-      ),
+      TweenSequenceItem(tween: ConstantTween(effectiveEndColor), weight: 40),
       TweenSequenceItem(
         tween: ColorTween(begin: effectiveEndColor, end: effectiveBeginColor),
         weight: 40,
