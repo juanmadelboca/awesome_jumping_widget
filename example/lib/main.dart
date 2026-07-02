@@ -96,10 +96,7 @@ class _DemoHomeState extends State<DemoHome> {
           });
         },
         items: [
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           const BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
@@ -144,7 +141,11 @@ class _DemoHomeState extends State<DemoHome> {
           children: [
             Text(
               'Premium Bouncing & Wobbling Effects',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
             SizedBox(height: 8),
             Text(
@@ -183,7 +184,11 @@ class _DemoHomeState extends State<DemoHome> {
                 animationDuration: Duration(milliseconds: 1500),
                 intervalDuration: Duration(seconds: 4),
                 labelText: 'Crown Tab',
-                child: Icon(Icons.workspace_premium, color: Colors.amber, size: 24),
+                child: Icon(
+                  Icons.workspace_premium,
+                  color: Colors.amber,
+                  size: 24,
+                ),
               ),
             ),
             // Preset 2: Notification Badge
@@ -200,7 +205,11 @@ class _DemoHomeState extends State<DemoHome> {
                 labelColorEnd: Colors.redAccent,
                 child: Badge(
                   label: Text('5'),
-                  child: Icon(Icons.notifications_active, color: Colors.redAccent, size: 32),
+                  child: Icon(
+                    Icons.notifications_active,
+                    color: Colors.redAccent,
+                    size: 32,
+                  ),
                 ),
               ),
             ),
@@ -210,7 +219,11 @@ class _DemoHomeState extends State<DemoHome> {
     );
   }
 
-  Widget _buildPresetCard({required String title, required String subtitle, required Widget widget}) {
+  Widget _buildPresetCard({
+    required String title,
+    required String subtitle,
+    required Widget widget,
+  }) {
     return Card(
       elevation: 2,
       child: Container(
@@ -220,12 +233,16 @@ class _DemoHomeState extends State<DemoHome> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Center(child: widget),
-            ),
+            Expanded(child: Center(child: widget)),
             const SizedBox(height: 16),
-            Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-            Text(subtitle, style: const TextStyle(color: Colors.grey, fontSize: 11)),
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+            ),
+            Text(
+              subtitle,
+              style: const TextStyle(color: Colors.grey, fontSize: 11),
+            ),
           ],
         ),
       ),
@@ -266,7 +283,9 @@ class _DemoHomeState extends State<DemoHome> {
                   height: 48,
                   shouldAnimate: _shouldAnimate,
                   jumpHeight: _jumpHeight,
-                  animationDuration: Duration(milliseconds: _durationMs.toInt()),
+                  animationDuration: Duration(
+                    milliseconds: _durationMs.toInt(),
+                  ),
                   intervalDuration: Duration(seconds: _intervalSeconds.toInt()),
                   jumpCurve: _jumpCurve,
                   landCurve: _landCurve,
@@ -279,7 +298,10 @@ class _DemoHomeState extends State<DemoHome> {
                   labelColorEnd: _labelColorEnd,
                   labelText: 'Custom Item',
                   labelTop: 54,
-                  labelStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  labelStyle: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.deepPurple,
@@ -294,7 +316,11 @@ class _DemoHomeState extends State<DemoHome> {
                       ],
                     ),
                     padding: const EdgeInsets.all(10),
-                    child: const Icon(Icons.star, color: Colors.amber, size: 28),
+                    child: const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                      size: 28,
+                    ),
                   ),
                 ),
               ),
@@ -402,7 +428,10 @@ class _DemoHomeState extends State<DemoHome> {
   }) {
     return SwitchListTile(
       dense: true,
-      title: Text(title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+      ),
       value: value,
       onChanged: onChanged,
       contentPadding: EdgeInsets.zero,
@@ -423,7 +452,10 @@ class _DemoHomeState extends State<DemoHome> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+            Text(
+              label,
+              style: const TextStyle(fontSize: 12, color: Colors.grey),
+            ),
             Text(
               value.toStringAsFixed(1),
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
