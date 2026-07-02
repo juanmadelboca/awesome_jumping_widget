@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Initial release of the premium, highly customizable jumping and shaking widget.
+* Added custom support for speed, interval, bounce curves, shake/rotation angle, and dynamic labels.
