@@ -7,7 +7,7 @@ A premium, highly customizable, and lightweight Flutter widget that makes icons,
 ![License](https://img.shields.io/github/license/juanmadelboca/awesome_jumping_widget)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/juanmadelboca/awesome_jumping_widget/main/assets/showcase.gif" alt="Awesome Jumping Widget Demo" width="350"/>
+  <img src="https://raw.githubusercontent.com/juanmadelboca/awesome_jumping_widget/improving_plugin_score/assets/showcase_bar.gif" alt="Awesome Jumping Widget Demo" width="90%"/>
 </p>
 
 ---
